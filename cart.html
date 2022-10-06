@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart basket</title>
+    <link rel="stylesheet" href="style_cart.css">
+</head>
+
+<body>
+
+<!-- Шпака сайта  -->
+<div class="header">
+    <a href="index_02.html">
+    <h1>Clothing Store</h1>
+    </a>
+
+    <a href="cart.html">
+    <img class="cart-img" src="white_square.png">
+    </a>
+
+    <a href="cart.html">
+    <div class="cart-price">
+        <h>0</h>
+    </div>
+    </a>
+
+</div>
+<!-- Шпака сайта  -->
+
+<!-- Основная часть -->
+<div class="container_cart">
+
+<!-- Корзина: вид карточки товара в корзине -->
+    <div class="card n-1" data-id="01">
+        <img class="card-img-top" src="shirt_1.webp">
+        <div class="card-info">
+            <div class="title_price">
+                <h4 class="card-price">
+                    <p class="card-title">Casual shirt</p>
+                    <p class="price">$45</p>
+                </h4>
+            </div>
+                <div class="card-buttons">
+                    <div class="items__control" data-action="minus">-</div>
+                    <div class="items__current" data-counter>0</div>
+                    <div class="items__control" data-action="plus">+</div>
+                </div>
+                <h3>$45</h3>
+            </div>
+    </div>
+<!-- Корзина: вид карточки товара в корзине -->
+
+</div>
+<!-- Основная часть -->
+
+</div>
+
+    <script src="counter.js"></script>
+    <script src="cart_01.js"></script>
+
+</body>
+</html>

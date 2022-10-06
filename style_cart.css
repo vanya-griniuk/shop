@@ -1,0 +1,187 @@
+/* Шапка сайта */
+
+body {
+    background-color: rgb(249, 249, 249);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0px;
+    margin-bottom: 50px;
+}
+
+.header {
+    color: aliceblue;
+    background: rgb(38, 36, 39);
+    padding: 15px;
+    border-top: 0px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.cart-img {
+    width: 53px;
+    height: 53px;
+    border-radius: 7px;
+    position: absolute;
+    position: relative;
+    left: 700px;
+}
+
+.cart-price {
+    background: red;
+    font-size: 17px;
+    margin-bottom: 65px;
+    height: auto;
+    border-radius: 3px;
+    padding: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: absolute;
+    position: relative;
+    left: 692px;
+}
+
+
+/* Карточка товара */
+
+.container_cart {
+    width: 800px;
+    max-width: 800px;
+    margin: auto; 
+}
+
+/* ниже кароточка => card n-1 */
+
+.card {  
+    max-width: 400px;
+    max-height: 130px ;
+    border: 2px solid;
+    border-radius: 5px;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+/* Фото карточки товара */
+
+.card-img-top {
+    width: 130px;
+    height: 130px;
+    padding-bottom: 0px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+/* Информация карточки товара */
+
+.card-info {
+    /* width: 300px; */
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    gap: 10px;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+.title_price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* h4 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+} */
+
+.card-price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    row-gap: 10px;
+    column-gap: 10px;
+    margin: 0px;
+    font-size: 18px;
+    /* margin-top: 10px;
+    margin-bottom: 5px;
+    padding: auto;
+    border: auto; */
+    /* display: flex; */
+    /* align-items: center; */
+}
+
+p {
+    margin: 0px;
+}
+
+.price {
+    background: rgb(38, 36, 39);
+    color: white;
+    border-radius: 3px;
+    padding: 3px 6px;
+}
+
+
+.card-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    row-gap: 8px;
+    column-gap: 8px;
+    font-size: 17px;
+    position: absolute;
+    position: relative;
+    /* left: 75px; */
+}
+
+h3 {
+    margin: 0px;
+    font-size: 21px;
+}
+
+
+.items__control {
+    cursor: pointer;
+}
+
+.price-btn {
+    font-size: 20px;
+    margin-left: 90px;
+    padding: auto;
+    border: auto;
+    display: flex;
+    /* flex-direction: row; */
+}
+
+/* .price-btn p1 {
+    color: red;
+    margin-right: 5px;
+    font-size: 17px;
+}
+
+.price-btn p2 {
+    color: green;
+    margin-left: 5px;
+    font-size: 17px;
+}
+
+.number {
+    font-size: 14px;
+    margin: auto;
+} */
