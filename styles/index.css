@@ -4,9 +4,7 @@
 	padding: 0;
 }
 
-body {
-	font-family: sans-serif;
-}
+body { font-family: sans-serif; }
 
 a {
 	color: white;
@@ -49,155 +47,64 @@ a {
 	margin: 33px;
 }
 
-.card-buttons {
-	display: flex;
-	flex-direction: row;
-	gap: 8px;
-	row-gap: 8px;
-	column-gap: 8px;
-	font-size: 16px;
-	position: absolute;
-	position: relative;
-	left: 75px;
+.card {
+	border: 2px solid black;
+	border-radius: 5px;
 }
 
-.card-img-top {
-	width: 200px;
-	padding-bottom: 0px;
-}
-
-.card-img-top {
+.card-img {
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px;
+	max-width: 100%;
 }
 
 .card-info {
+	display: flex;
+	flex-direction: column;
 	font-size: 13px;
-	padding-left: 10px;
+	gap: 9px;
+	padding: 5px 10px 10px;
 }
 
-h4 {
+.card-title {
 	font-size: 20px;
-	margin-top: 10px;
-	margin-bottom: 5px;
+	font-weight: 700;
 }
 
-.card-price {
-	font-size: 20px;
-	margin-bottom: 12px;
-	padding: auto;
-	border: auto;
+.card-price-container {
 	display: flex;
-	align-items: center;
+	justify-content: space-between;
 }
 
-.card-price h4 {
-	margin: 0px;
+.price {
+	font-size: 20px;
+	font-weight: 700;
 }
 
-.items__control {
+.card-counter-container {
+	display: flex;
+	gap: 8px;
+	font-size: 18px;
+}
+
+.counter-button {
 	cursor: pointer;
+	font-size: 16px;
+	padding: 0 2px;
+	-webkit-text-stroke: 1px;
 }
 
-.price-btn {
-	font-size: 20px;
-	margin-left: 90px;
-	padding: auto;
-	border: auto;
-	display: flex;
+.counter-button:first-child { color: green; }
+.counter-button:last-child { color: red; }
+
+@media (max-width: 920px) {
+	.container {
+		grid-template-columns: repeat(3, 200px);
+	}
 }
 
-.price-btn p1 {
-	color: red;
-	margin-right: 5px;
-	font-size: 17px;
-}
-
-.price-btn p2 {
-	color: green;
-	margin-left: 5px;
-	font-size: 17px;
-}
-
-.number {
-	font-size: 14px;
-	margin: auto;
-}
-
-.card {
-	max-width: 200px;
-	border: 2px solid;
-	border-radius: 5px;
-}
-
-.card n-1 {
-	max-width: 200px;
-	border: 2px solid;
-	border-radius: 5px;
-}
-
-.card n-2 {
-	max-width: 200px;
-	border: 2px solid;
-	border-radius: 5px;
-}
-
-.card n-3 {
-	max-width: 200px;
-	border: 2px solid;
-	border-radius: 5px;
-}
-
-.card n-4 {
-	max-width: 200px;
-	border: 2px solid;
-	border-radius: 5px;
-}
-
-.card n-5 {
-	max-width: 200px;
-	border: 2px solid;
-	border-radius: 5px;
-}
-
-.card n-6 {
-	max-width: 200px;
-	border: 2px solid;
-	border-radius: 5px;
-}
-
-.card n-7 {
-	max-width: 200px;
-	border: 2px solid;
-	border-radius: 5px;
-}
-
-.card n-8 {
-	max-width: 200px;
-	border: 2px solid;
-	border-radius: 5px;
-}
-
-.card n-9 {
-	max-width: 200px;
-	border: 2px solid;
-	border-radius: 5px;
-}
-
-.card n-10 {
-	max-width: 200px;
-	border: 2px solid;
-	border-radius: 5px;
-}
-
-.card n-11 {
-	max-width: 200px;
-	border: 2px solid;
-	border-radius: 5px;
-}
-
-.card n-12 {
-	max-width: 200px;
-	border: 2px solid;
-	border-radius: 5px;
+@media (max-width: 700px) {
+	.container {
+		grid-template-columns: repeat(2, 200px);
+	}
 }

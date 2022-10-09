@@ -85,18 +85,31 @@ const products = [
 	},
 ];
 
-const cardElement = ({ id, name, description, price, img }) => `
-	<div class="card" data-id="${id}">
-		<img class="card-img-top" src="${img}">
+const makeCounter = (counterContainer) => {
+	let counter = 0;
+	
+	const handleMinusClick = () => (counter > 0) && (counterContainer.innerHTML = --counter);
+	const handlePlusClick = () => counterContainer.innerHTML = ++counter;
+
+	return { handleMinusClick, handlePlusClick };
+};
+
+const createCardElement = ({ name, description, price, img }) => `
+	<div class="card">
+		<img class="card-img" src="${img}">
 		<div class="card-info">
-			<h4 class="card-title">${name}</h4>
+			<p class="card-title">${name}</p>
 			<p>${description}</p>
-			<div class="card-price">
-				<h4 class="price">$${price}</h4>
-				<div class="card-buttons">
-					<div class="items__control" data-action="minus">-</div>
-					<div class="items__current" data-counter>0</div>
-					<div class="items__control" data-action="plus">+</div>
+			<div class="card-price-container">
+				<p class="price">$${price}</p>
+				<div class="card-counter-container">
+					<button class="counter-button">
+						<i class="bi bi-dash"></i>
+					</button>
+					<div class="counter-current">0</div>
+					<button class="counter-button">
+						<i class="bi bi-plus"></i>
+					</button>
 				</div>
 			</div>
 		</div>
@@ -105,36 +118,14 @@ const cardElement = ({ id, name, description, price, img }) => `
 
 document.addEventListener("DOMContentLoaded", () => {
 	const containerElement = document.getElementById("container");
+	containerElement.innerHTML = products.map(createCardElement).join("");
 
-	containerElement.innerHTML = products.map(cardElement).join("");
-});
+	const cardElements = [...document.getElementsByClassName("card-counter-container")];
+	cardElements.forEach((cardElement) => {
+		const [minusButton, counterContainer, plusButton] = cardElement.children;
+		const { handleMinusClick, handlePlusClick } = makeCounter(counterContainer);
 
-window.addEventListener("click", function (event) { // Добавляем отслеживание на всем окне
-  // Объявляем переменную для счетсчика
-  let counter;
-
-  // Проверяем клик строго по кнопкам Плюс или Минус
-  if (
-    event.target.dataset.action === "plus" ||
-    event.target.dataset.action === "minus"
-  ) {
-    // Находим обертку счетсчика
-    const cardButtons = event.target.closest(".card-buttons");
-
-    //Находим див с числом счетсчика
-    counter = cardButtons.querySelector("[data-counter]");
-  }
-
-  // Проверяем является ли элемент по которому был совершен клик кнопкой Плюс
-  if (event.target.dataset.action === "plus") {
-    counter.innerText = ++counter.innerText;
-  }
-
-  if (event.target.dataset.action === "minus") {
-    // Проверяем чтобы счетсчик был больше 0
-    if (parseInt(counter.innerText) > 0) {
-      // Изменяе текст в счетсчике уменьшая его на 0
-      counter.innerText = --counter.innerText;
-    }
-  }
+		minusButton.onclick = handleMinusClick;
+		plusButton.onclick = handlePlusClick;
+	})
 });
