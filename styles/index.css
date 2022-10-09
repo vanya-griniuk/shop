@@ -1,0 +1,203 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: sans-serif;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+.header {
+	align-items: center;
+	background-color: rgb(38, 36, 39);
+	display: flex;
+	height: 90px;
+	justify-content: space-between;
+	padding: 3px 33px;
+}
+
+.cart {
+	background-color: white;
+	border-radius: 4px;
+	color: black;
+	font-size: 30px;
+	padding: 5px;
+}
+
+.cart-price {
+	background-color: red;
+	border-radius: 5px;
+	color: white;
+	padding: 1px 3px;
+	position: absolute;
+	font-size: 16px;
+	right: 26px;
+	top: 11px;
+}
+
+.container {
+	display: grid;
+	grid-gap: 25px;
+	grid-template-columns: repeat(4, 200px);
+	justify-content: center;
+	margin: 33px;
+}
+
+.card-buttons {
+	display: flex;
+	flex-direction: row;
+	gap: 8px;
+	row-gap: 8px;
+	column-gap: 8px;
+	font-size: 16px;
+	position: absolute;
+	position: relative;
+	left: 75px;
+}
+
+.card-img-top {
+	width: 200px;
+	padding-bottom: 0px;
+}
+
+.card-img-top {
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+.card-info {
+	font-size: 13px;
+	padding-left: 10px;
+}
+
+h4 {
+	font-size: 20px;
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+.card-price {
+	font-size: 20px;
+	margin-bottom: 12px;
+	padding: auto;
+	border: auto;
+	display: flex;
+	align-items: center;
+}
+
+.card-price h4 {
+	margin: 0px;
+}
+
+.items__control {
+	cursor: pointer;
+}
+
+.price-btn {
+	font-size: 20px;
+	margin-left: 90px;
+	padding: auto;
+	border: auto;
+	display: flex;
+}
+
+.price-btn p1 {
+	color: red;
+	margin-right: 5px;
+	font-size: 17px;
+}
+
+.price-btn p2 {
+	color: green;
+	margin-left: 5px;
+	font-size: 17px;
+}
+
+.number {
+	font-size: 14px;
+	margin: auto;
+}
+
+.card {
+	max-width: 200px;
+	border: 2px solid;
+	border-radius: 5px;
+}
+
+.card n-1 {
+	max-width: 200px;
+	border: 2px solid;
+	border-radius: 5px;
+}
+
+.card n-2 {
+	max-width: 200px;
+	border: 2px solid;
+	border-radius: 5px;
+}
+
+.card n-3 {
+	max-width: 200px;
+	border: 2px solid;
+	border-radius: 5px;
+}
+
+.card n-4 {
+	max-width: 200px;
+	border: 2px solid;
+	border-radius: 5px;
+}
+
+.card n-5 {
+	max-width: 200px;
+	border: 2px solid;
+	border-radius: 5px;
+}
+
+.card n-6 {
+	max-width: 200px;
+	border: 2px solid;
+	border-radius: 5px;
+}
+
+.card n-7 {
+	max-width: 200px;
+	border: 2px solid;
+	border-radius: 5px;
+}
+
+.card n-8 {
+	max-width: 200px;
+	border: 2px solid;
+	border-radius: 5px;
+}
+
+.card n-9 {
+	max-width: 200px;
+	border: 2px solid;
+	border-radius: 5px;
+}
+
+.card n-10 {
+	max-width: 200px;
+	border: 2px solid;
+	border-radius: 5px;
+}
+
+.card n-11 {
+	max-width: 200px;
+	border: 2px solid;
+	border-radius: 5px;
+}
+
+.card n-12 {
+	max-width: 200px;
+	border: 2px solid;
+	border-radius: 5px;
+}
