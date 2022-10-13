@@ -28,7 +28,7 @@ a {
 	padding: 5px;
 }
 
-.cart-price {
+.cart-items-counter {
 	background-color: red;
 	border-radius: 5px;
 	color: white;
@@ -76,7 +76,7 @@ a {
 	justify-content: space-between;
 }
 
-.price {
+.card-price {
 	font-size: 20px;
 	font-weight: 700;
 }
@@ -87,15 +87,15 @@ a {
 	font-size: 18px;
 }
 
-.counter-button {
+.card-counter-button {
 	cursor: pointer;
 	font-size: 16px;
 	padding: 0 2px;
 	-webkit-text-stroke: 1px;
 }
 
-.counter-button:first-child { color: green; }
-.counter-button:last-child { color: red; }
+.card-counter-button:first-child { color: green; }
+.card-counter-button:last-child { color: red; }
 
 @media (max-width: 920px) {
 	.container {
