@@ -129,3 +129,23 @@ document.addEventListener("DOMContentLoaded", () => {
 		plusButton.onclick = handlePlusClick;
 	})
 });
+
+// cart counter
+
+const cartCounterElement = document.getElementById('cart-price');
+cartCounterElement.innerText = parseInt(cartCounterElement.innerText) + parseInt(makeCounter);
+
+console.log(cartCounterElement);
+
+
+
+
+
+
+
+
+
+
+
+
+
