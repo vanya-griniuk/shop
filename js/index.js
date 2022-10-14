@@ -85,11 +85,22 @@ const products = [
 	},
 ];
 
-const makeCounter = (counterContainer) => {
-	let counter = 0;
-	
-	const handleMinusClick = () => (counter > 0) && (counterContainer.innerHTML = --counter);
-	const handlePlusClick = () => counterContainer.innerHTML = ++counter;
+let cartItemsCounter = 0;
+
+const makeProductsCounter = (productCounterElement, cartItemsCounterElement) => {
+	let productCounter = 0;
+
+	const handleMinusClick = () => {
+    if (productCounter > 0) {
+      productCounterElement.innerHTML = --productCounter;
+      cartItemsCounterElement.innerHTML = --cartItemsCounter;
+    }
+  };
+
+	const handlePlusClick = () => {
+    productCounterElement.innerHTML = ++productCounter;
+    cartItemsCounterElement.innerHTML = ++cartItemsCounter;
+  };
 
 	return { handleMinusClick, handlePlusClick };
 };
@@ -101,13 +112,13 @@ const createCardElement = ({ name, description, price, img }) => `
 			<p class="card-title">${name}</p>
 			<p>${description}</p>
 			<div class="card-price-container">
-				<p class="price">$${price}</p>
+				<p class="card-price">$${price}</p>
 				<div class="card-counter-container">
-					<button class="counter-button">
+					<button class="card-counter-button">
 						<i class="bi bi-dash"></i>
 					</button>
-					<div class="counter-current">0</div>
-					<button class="counter-button">
+					<div class="card-counter-current">0</div>
+					<button class="card-counter-button">
 						<i class="bi bi-plus"></i>
 					</button>
 				</div>
@@ -120,22 +131,16 @@ document.addEventListener("DOMContentLoaded", () => {
 	const containerElement = document.getElementById("container");
 	containerElement.innerHTML = products.map(createCardElement).join("");
 
-	const cardElements = [...document.getElementsByClassName("card-counter-container")];
-	cardElements.forEach((cardElement) => {
-		const [minusButton, counterContainer, plusButton] = cardElement.children;
-		const { handleMinusClick, handlePlusClick } = makeCounter(counterContainer);
+  const cartItemsCounterElement = document.getElementById("cart-items-counter");
+	const cardCounterElements = [...document.getElementsByClassName("card-counter-container")];
+	cardCounterElements.forEach((cardCounterElement) => {
+		const [minusButton, productCounterElement, plusButton] = cardCounterElement.children;
+		const { handleMinusClick, handlePlusClick } = makeProductsCounter(productCounterElement, cartItemsCounterElement);
 
 		minusButton.onclick = handleMinusClick;
 		plusButton.onclick = handlePlusClick;
-	})
+	});
 });
-
-// cart counter
-
-const cartCounterElement = document.getElementById('cart-price');
-cartCounterElement.innerText = parseInt(cartCounterElement.innerText) + parseInt(makeCounter);
-
-console.log(cartCounterElement);
 
 
 
