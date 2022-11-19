@@ -1,0 +1,88 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Casual shirt",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing",
+      "price": 45,
+      "img": "../images/shirt_1.webp"
+    },
+    {
+      "id": 2,
+      "name": "Office Shirt",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing",
+      "price": 100,
+      "img": "../images/shirt_2.jpeg"
+    },
+    {
+      "id": 3,
+      "name": "T-shirt",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing",
+      "price": 25,
+      "img": "../images/shirt_3.webp"
+    },
+    {
+      "id": 4,
+      "name": "Mens Suit",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing",
+      "price": 300,
+      "img": "../images/suit_4.jpeg"
+    },
+    {
+      "id": 5,
+      "name": "Mens Tie",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing",
+      "price": 25,
+      "img": "../images/tie_5.webp"
+    },
+    {
+      "id": 6,
+      "name": "Casual shoes",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing",
+      "price": 200,
+      "img": "../images/shoes_6.webp"
+    },
+    {
+      "id": 7,
+      "name": "Black suit",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing",
+      "price": 450,
+      "img": "../images/suit_7.jpeg"
+    },
+    {
+      "id": 8,
+      "name": "Polo shirt",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing",
+      "price": 45,
+      "img": "../images/polo_8.jpeg"
+    },
+    {
+      "id": 9,
+      "name": "Denim shirt",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing",
+      "price": 85,
+      "img": "../images/dshirt_9.jpeg"
+    },
+    {
+      "id": 10,
+      "name": "Denim pants",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing",
+      "price": 120,
+      "img": "../images/dpants_10.jpeg"
+    },
+    {
+      "id": 11,
+      "name": "Basic cap",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing",
+      "price": 35,
+      "img": "../images/cap_11.webp"
+    },
+    {
+      "id": 12,
+      "name": "Leather boots",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing",
+      "price": 350,
+      "img": "../images/boots_12.jpeg"
+    }
+  ]
+}
