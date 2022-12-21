@@ -7,7 +7,7 @@ const hostname = '127.0.0.1';
 const port = 3001;
 
 // const productsPath = path.join(__dirname, './products.json') 
-// const products = fs.readFileSync(productsPath, 'utf-8')
+// const products = fs.readFileSync(productsPath, 'utf-8') 
 
 const server = http.createServer(async (req, res) => {
   const { rows: products } = await db.query('SELECT * FROM products');
