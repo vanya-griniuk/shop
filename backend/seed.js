@@ -6,21 +6,10 @@ const productsPath = path.join(__dirname, './products.json');
 const productsJSON = fs.readFileSync(productsPath, 'utf-8');
 const { products } = JSON.parse(productsJSON);
 
-const bracketify = (value) => (typeof value === 'string') ? `'${value}'` : value;
-const stringify = (values) => values.map(bracketify).join(', ');
-
-products.forEach((product) => {
+products.forEach(async (product) => {
   const { name, description, price, img } = product; 
+  const insertSQL = 'INSERT INTO products(name, description, price, img) VALUES($1, $2, $3, $4)';
   const values = [name, description, price, img];
 
-  db.query(`INSERT INTO products(name, description, price, img) VALUES(${stringify(values)})`);
-
+  await db.query(insertSQL, values);
 });
-
-
-
-
-
-
-
-
