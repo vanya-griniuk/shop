@@ -1,24 +1,6 @@
 
 let cartItemsCounter = 0;
 
-const makeProductsCounter = (productCounterElement, cartItemsCounterElement) => {
-	let productCounter = 0;
-
-	const handleMinusClick = () => {
-    if (productCounter > 0) {
-      productCounterElement.innerHTML = --productCounter;
-      cartItemsCounterElement.innerHTML = --cartItemsCounter;
-    }
-  };
-
-	const handlePlusClick = () => {
-    productCounterElement.innerHTML = ++productCounter;
-    cartItemsCounterElement.innerHTML = ++cartItemsCounter;
-  };
-
-	return { handleMinusClick, handlePlusClick };
-};
-
 const createCardElement = ({ name, description, price, img }) => `
 	<div class="card">
 		<img class="card-img" src="${img}">
@@ -41,20 +23,33 @@ const createCardElement = ({ name, description, price, img }) => `
 	</div>
 `;
 
-document.addEventListener("DOMContentLoaded", async () => {
-	const { products } = await fetch('http://127.0.0.1:3001').then((response) => response.json());
-	const containerElement = document.getElementById("container");
-	containerElement.innerHTML = products.map(createCardElement).join("");
-
+const injectCounter = (cardCounterElement) => {
   const cartItemsCounterElement = document.getElementById("cart-items-counter");
-	const cardCounterElements = [...document.getElementsByClassName("card-counter-container")];
-	cardCounterElements.forEach((cardCounterElement) => {
-		const [minusButton, productCounterElement, plusButton] = cardCounterElement.children;
-		const { handleMinusClick, handlePlusClick } = makeProductsCounter(productCounterElement, cartItemsCounterElement);
+  const [minusButton, productCounterElement, plusButton] = cardCounterElement.children;
 
-		minusButton.onclick = handleMinusClick;
-		plusButton.onclick = handlePlusClick;
-	});
+  let productCounter = 0;
+
+  minusButton.onclick = () => {
+    if (productCounter > 0) {
+      productCounterElement.innerHTML = --productCounter;
+      cartItemsCounterElement.innerHTML = --cartItemsCounter;
+    }
+  };
+
+  plusButton.onclick = () => {
+    productCounterElement.innerHTML = ++productCounter;
+    cartItemsCounterElement.innerHTML = ++cartItemsCounter;
+  };
+};
+ 
+document.addEventListener("DOMContentLoaded", async () => {
+  const products = await fetch('http://127.0.0.1:3001').then((response) => response.json());
+
+  const containerElement = document.getElementById("container");
+  containerElement.innerHTML = products.map(createCardElement).join("");
+
+  const cardCounterElements = [...document.getElementsByClassName("card-counter-container")];
+  cardCounterElements.forEach(injectCounter);
 });
 
 
